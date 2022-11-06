@@ -1,6 +1,6 @@
 {
   "name": "vgt",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Cupid Valentine <westerngod@126.com>",
   "description": "A CLI tool for quickly creating my own Vue3 template and React18-template",
   "main": "cli/lib/index.js",
@@ -25,12 +25,11 @@
     "import-local": "^3.1.0",
     "ora": "^6.1.2",
     "path-exists": "^5.0.0",
-    "semver": "^7.3.8"
-  },
-  "devDependencies": {
+    "semver": "^7.3.8",
     "execa": "^6.1.0",
     "inquirer": "^9.1.4",
     "npmlog": "^6.0.2",
     "url-join": "^5.0.0"
-  }
+  },
+  "devDependencies": {}
 }
