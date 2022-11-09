@@ -21,10 +21,14 @@ class InitCommand extends Command {
 
   get options() {
     return [
-      ['-f, --force', '是否强制更新', false],
-      ['-v, --version', '版本检查', false],
-      ['-t, --type <type>', '项目类型(project/page)'],
-      ['-tp, --template <template>', '模板名称']
+      [
+        '-f, --force',
+        'Whether to force creation, it will overwrite the directory with the same name',
+        false
+      ],
+      // ['-v, --version', 'version check', false],
+      ['-t, --type <type>', 'create type (project/page)'],
+      ['-tp, --template <template>', 'template name']
     ]
   }
 

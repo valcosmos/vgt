@@ -21,15 +21,15 @@
     "chalk": "^5.1.2",
     "commander": "^9.4.1",
     "dirname-filename-esm": "^1.1.1",
+    "execa": "^6.1.0",
     "fs-extra": "^10.1.0",
+    "gradient-string": "^2.0.2",
     "import-local": "^3.1.0",
+    "inquirer": "^9.1.4",
+    "npmlog": "^7.0.1",
     "ora": "^6.1.2",
     "path-exists": "^5.0.0",
     "semver": "^7.3.8",
-    "execa": "^6.1.0",
-    "inquirer": "^9.1.4",
-    "npmlog": "^7.0.1",
     "url-join": "^5.0.0"
-  },
-  "devDependencies": {}
+  }
 }

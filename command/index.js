@@ -26,11 +26,11 @@ class Command {
   }
 
   get command() {
-    throw new Error('command must be implements')
+    throw new Error('Command must be implements')
   }
 
   get description() {
-    throw new Error('description must be implement')
+    throw new Error('Description must be implement')
   }
 
   get options() {
@@ -38,7 +38,7 @@ class Command {
   }
 
   get action() {
-    throw new Error('action must be implement')
+    throw new Error('Action must be implement')
   }
 
   preAction() {

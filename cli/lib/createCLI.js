@@ -7,6 +7,8 @@ import { program } from 'commander'
 
 import { dirname } from 'dirname-filename-esm'
 
+import gradient from 'gradient-string'
+
 const __dirname = dirname(import.meta)
 
 const pkgPath = path.resolve(__dirname, '../../package.json')
@@ -25,7 +27,7 @@ function checkNodeVersion() {
   log.verbose('node version', process.version)
 
   if (!semver.gte(process.version, LOWER_NODE_VERSION)) {
-    throw new Error(chalk.red(`vgt 需要安装 ${LOWER_NODE_VERSION}以上版本的Node.js`))
+    throw new Error(chalk.red(`The version of Node.js must be above 1.2${LOWER_NODE_VERSION}`))
   }
 }
 
@@ -35,13 +37,21 @@ function preAction() {
 }
 
 export default function createCLI() {
+  // log.info('version', pkg.version)
+
+  console.log('\n')
+
+  console.log(gradient('#2af598', '#009efd')('==> Hi, Welcome to use vgt 👋'))
+
+  console.log('\n')
+
   log.info('version', pkg.version)
 
   program
     .name(Object.keys(pkg.bin)[0])
     .usage('<command> [options]')
     .version(pkg.version)
-    .option('-d, --debug', '是否开启调试模式', false)
+    .option('-d, --debug', 'Whether to enable debug mode', false)
     .hook('preAction', preAction)
 
   program.on('option:debug', function () {
@@ -52,7 +62,7 @@ export default function createCLI() {
   })
 
   program.on('command:*', function (obj) {
-    log.error('未知的命令' + obj[0])
+    log.error('Unknown command: ' + obj[0])
   })
 
   return program

@@ -21,15 +21,15 @@ const ADD_TEMPLATE = [
 const TEMP_HOME = '.vgt-tmp'
 
 const ADD_TYPE = [
-  { name: '项目', value: ADD_TYPE_PROJECT },
-  { name: '页面', value: ADD_TYPE_PAGE }
+  { name: 'Project', value: ADD_TYPE_PROJECT },
+  { name: 'Page', value: ADD_TYPE_PAGE }
 ]
 
 // 获取创建类型
 function getAddType() {
   return makeList({
     choices: ADD_TYPE,
-    message: '请选择初始化类型',
+    message: 'Please select a creation type',
     defaultValue: ADD_TYPE_PROJECT
   })
 }
@@ -37,10 +37,10 @@ function getAddType() {
 //获取项目名称
 function getAddName() {
   return makeInput({
-    message: '请输入项目名称',
+    message: 'Please input the project name',
     defaultValue: '',
     validate(v) {
-      return v.length > 0 || '项目名称必须输入'
+      return v.length > 0 || 'The project name is required'
     }
   })
 }
@@ -49,7 +49,7 @@ function getAddName() {
 function getAddTemplate() {
   return makeList({
     choices: ADD_TEMPLATE,
-    message: '请选择项目模板'
+    message: 'Please select the project template'
   })
 }
 
@@ -84,7 +84,7 @@ export default async function createTemplate(name, opts) {
     if (template) {
       selectedTemplate = ADD_TEMPLATE.find((tp) => tp.value === template)
       if (!selectedTemplate) {
-        throw new Error(`项目模板${template}不存在`)
+        throw new Error(`The project template **${template}** is doesn't exist`)
       }
     } else {
       const addTemplate = await getAddTemplate()
@@ -109,6 +109,6 @@ export default async function createTemplate(name, opts) {
       targetPath
     }
   } else {
-    throw new Error(`创建的项目类型${addType}不支持`)
+    throw new Error(`This type **${addType}** is not supported temporarily`)
   }
 }
