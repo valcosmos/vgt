@@ -1,6 +1,6 @@
 {
   "name": "vgt",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Cupid Valentine <westerngod@126.com>",
   "description": "A CLI tool for quickly creating my own Vue3 template and React18-template",
   "main": "cli/lib/index.js",
