@@ -1,6 +1,6 @@
 {
   "name": "vgt",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Cupid Valentine",
   "description": "A CLI tool for quickly creating my own Vue3 template and React18-template",
   "homepage": "https://github.com/valcosmos/vgt",
