@@ -45,7 +45,7 @@ export default function createCLI() {
 
   console.log('\n')
 
-  log.info('version', pkg.version)
+  // log.info('version', pkg.version)
 
   program
     .name(Object.keys(pkg.bin)[0])
