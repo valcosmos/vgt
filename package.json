@@ -28,7 +28,7 @@
     "semver": "^7.3.8",
     "execa": "^6.1.0",
     "inquirer": "^9.1.4",
-    "npmlog": "^6.0.2",
+    "npmlog": "^7.0.1",
     "url-join": "^5.0.0"
   },
   "devDependencies": {}
