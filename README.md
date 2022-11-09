@@ -11,6 +11,21 @@ And the template, it's just the most concise state right now, nothing has been a
 ![](demo.png)
 
 
+## Install
+
+```sh
+
+# use yarn
+yarn global add vgt
+
+# use pnpm
+pnpm i -g vgt
+
+# use npx
+npx vgt init
+
+```
+
 ## Usage
 
 ```sh
