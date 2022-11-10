@@ -21,8 +21,8 @@ yarn global add vgt
 # use pnpm
 pnpm i -g vgt
 
-# use npx
-npx vgt init
+# use npm
+npx i -g vgt
 
 ```
 
