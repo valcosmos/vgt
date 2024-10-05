@@ -1,10 +1,11 @@
 import log from 'npmlog'
-import isDebug from './isDebug.js'
+import isDebug from './isDebug'
 
 if (isDebug()) {
-  //verbose 是调试级别的日志
+  // verbose 是调试级别的日志
   log.level = 'verbose'
-} else {
+}
+else {
   log.level = 'info'
 }
 

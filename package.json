@@ -1,40 +1,56 @@
 {
   "name": "vgt",
+  "type": "module",
   "version": "0.0.5",
-  "author": "Cupid Valentine",
+  "packageManager": "pnpm@9.12.0+sha512.4abf725084d7bcbafbd728bfc7bee61f2f791f977fd87542b3579dcb23504d170d46337945e4c66485cd12d588a0c0e570ed9c477e7ccdd8507cf05f3f92eaca",
   "description": "A CLI tool for quickly creating my own Vue3 template and React18-template",
+  "author": "Cupid Valentine",
+  "license": "MIT",
   "homepage": "https://github.com/valcosmos/vgt",
   "repository": {
     "type": "git",
     "url": "https://github.com/valcosmos/vgt.git"
   },
-  "main": "cli/lib/index.js",
-  "type": "module",
-  "bin": {
-    "vgt": "cli/bin/cli.js"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "CLI",
     "Create template"
   ],
-  "license": "MIT",
+  "main": "dist/cli.js",
+  "bin": "dist/cli.js",
+  "scripts": {
+    "start": "tsup --watch",
+    "build": "tsup",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
   "dependencies": {
-    "axios": "^1.1.3",
-    "chalk": "^5.1.2",
-    "commander": "^9.4.1",
-    "dirname-filename-esm": "^1.1.1",
-    "execa": "^6.1.0",
-    "fs-extra": "^10.1.0",
-    "gradient-string": "^2.0.2",
-    "import-local": "^3.1.0",
-    "inquirer": "^9.1.4",
+    "@inquirer/input": "^3.0.1",
+    "@inquirer/prompts": "^6.0.1",
+    "@inquirer/select": "^3.0.1",
+    "axios": "^1.7.7",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "dirname-filename-esm": "^1.1.2",
+    "execa": "^9.4.0",
+    "fs-extra": "^11.2.0",
+    "gradient-string": "^3.0.0",
+    "import-local": "^3.2.0",
+    "inquirer": "^11.1.0",
     "npmlog": "^7.0.1",
-    "ora": "^6.1.2",
+    "ora": "^8.1.0",
     "path-exists": "^5.0.0",
-    "semver": "^7.3.8",
+    "semver": "^7.6.3",
     "url-join": "^5.0.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.7.3",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.7.4",
+    "@types/npmlog": "^7.0.0",
+    "@types/semver": "^7.5.8",
+    "@typescript-eslint/utils": "^8.8.0",
+    "eslint": "^9.11.1",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.2"
   }
 }

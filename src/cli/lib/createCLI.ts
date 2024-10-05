@@ -1,27 +1,27 @@
-//用于读取json文件
-import fse from 'fs-extra'
-
 import path from 'node:path'
+import process from 'node:process'
+import chalk from 'chalk'
 
 import { program } from 'commander'
 
 import { dirname } from 'dirname-filename-esm'
 
+// 用于读取json文件
+import fse from 'fs-extra'
+
 import gradient from 'gradient-string'
+import semver from 'semver'
+import { log } from '../../utils'
 
 const __dirname = dirname(import.meta)
 
-const pkgPath = path.resolve(__dirname, '../../package.json')
-
-import { log } from '../../utils/index.js'
-import semver from 'semver'
-import chalk from 'chalk'
+const pkgPath = path.resolve(process.cwd(), 'package.json')
 
 const pkg = fse.readJsonSync(pkgPath)
 
 const LOWER_NODE_VERSION = '14.0.0'
 
-//检查node版本
+// 检查node版本
 function checkNodeVersion() {
   // console.log(process.version)
   log.verbose('node version', process.version)
@@ -41,7 +41,7 @@ export default function createCLI() {
 
   console.log('\n')
 
-  console.log(gradient('#2af598', '#009efd')('==> Hi, Welcome to use vgt 👋'))
+  console.log(gradient(['#2af598', '#009efd'])('==> Hi, Welcome to use vgt 👋'))
 
   console.log('\n')
 
@@ -54,15 +54,15 @@ export default function createCLI() {
     .option('-d, --debug', 'Whether to enable debug mode', false)
     .hook('preAction', preAction)
 
-  program.on('option:debug', function () {
-    //是否开启了debug模式
+  program.on('option:debug', () => {
+    // 是否开启了debug模式
     if (program.opts().debug) {
       log.verbose('debug', 'launch debug mode')
     }
   })
 
-  program.on('command:*', function (obj) {
-    log.error('Unknown command: ' + obj[0])
+  program.on('command:*', (obj) => {
+    log.error('Error', `Unknown command: ${obj[0]}`)
   })
 
   return program

@@ -1,18 +1,19 @@
-import fse from 'fs-extra'
+import type { SelectedTemplate, Template } from './type.js'
 import path from 'node:path'
+import chalk from 'chalk'
+import fse from 'fs-extra'
+import ora from 'ora'
 import { pathExistsSync } from 'path-exists'
 import { log } from '../utils/index.js'
-import ora from 'ora'
-import chalk from 'chalk'
 
-function getCacheFilePath(targetPath, template) {
+function getCacheFilePath(targetPath: string, template: Template) {
   return path.resolve(targetPath, 'node_modules', template.npmName, 'template')
 }
 
-function copyFile(targetPath, template, installDir, name) {
+function copyFile(targetPath: string, template: Template, installDir: string, name: string) {
   const originFile = getCacheFilePath(targetPath, template)
   // console.log(originFile)
-  log.verbose(originFile)
+  log.verbose('originFile', originFile)
   const fileList = fse.readdirSync(originFile)
   const spinner = ora('Template files are being copied...').start()
   fileList.map((file) => {
@@ -31,7 +32,7 @@ function copyFile(targetPath, template, installDir, name) {
   console.log(chalk.greenBright(`       pnpm dev\n`))
 }
 
-export default function installTemplate(selectedTemplate, opts) {
+export default function installTemplate(selectedTemplate: SelectedTemplate, opts: any) {
   const { force = false } = opts
   const { targetPath, name, template } = selectedTemplate
   const rootDir = process.cwd()
@@ -41,11 +42,13 @@ export default function installTemplate(selectedTemplate, opts) {
   if (pathExistsSync(installDir)) {
     if (!force) {
       return log.error(chalk.green(`The dir ==> **${installDir}**`), chalk.red('is already exists'))
-    } else {
+    }
+    else {
       fse.removeSync(installDir)
       fse.ensureDirSync(installDir)
     }
-  } else {
+  }
+  else {
     fse.ensureDirSync(installDir)
   }
 

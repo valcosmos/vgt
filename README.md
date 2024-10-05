@@ -1,6 +1,5 @@
 # vgt
 
-
 ## Description
 A CLI tool for quickly creating my own Vue3 template and React18-template. 😊
 
@@ -9,7 +8,6 @@ I build it just for fun, it is still in progress. 🤭
 And the template, it's just the most concise state right now, nothing has been added. And I will continue to update and integrate more configurations for ease of use at work. 😏
 
 ![](demo.png)
-
 
 ## Install
 
