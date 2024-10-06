@@ -1,5 +1,6 @@
 import type { SelectedTemplate, Template } from './type.js'
 import path from 'node:path'
+import process from 'node:process'
 import chalk from 'chalk'
 import fse from 'fs-extra'
 import ora from 'ora'
@@ -16,20 +17,20 @@ function copyFile(targetPath: string, template: Template, installDir: string, na
   log.verbose('originFile', originFile)
   const fileList = fse.readdirSync(originFile)
   const spinner = ora('Template files are being copied...').start()
-  fileList.map((file) => {
+  fileList.forEach((file) => {
     fse.copySync(`${originFile}/${file}`, `${installDir}/${file}`)
   })
   spinner.stop()
 
   log.success('Template has been successfully copied')
 
-  console.log(`\n Scaffolding project in ${installDir}\n`)
+  log.info('👉', `\n Scaffolding project in ${installDir}\n`)
 
-  console.log(`\n Done. Now run: \n`)
+  log.info('👉', `\n Done. Now run: \n`)
 
-  console.log(chalk.greenBright(`       cd ${name}`))
-  console.log(chalk.greenBright(`       pnpm i`))
-  console.log(chalk.greenBright(`       pnpm dev\n`))
+  log.info('👉', chalk.greenBright(`       cd ${name}`))
+  log.info('👉', chalk.greenBright(`       pnpm i`))
+  log.info('👉', chalk.greenBright(`       pnpm dev\n`))
 }
 
 export default function installTemplate(selectedTemplate: SelectedTemplate, opts: any) {

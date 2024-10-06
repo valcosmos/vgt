@@ -50,5 +50,6 @@ class InitCommand extends CustomCommand {
 }
 
 export default function createInitCommand(program: Command): void {
+  // eslint-disable-next-line no-new
   new InitCommand(program)
 }
