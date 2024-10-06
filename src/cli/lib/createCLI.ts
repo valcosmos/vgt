@@ -1,23 +1,26 @@
-import path from 'node:path'
+// import path from 'node:path'
 import process from 'node:process'
 import chalk from 'chalk'
 
 import { program } from 'commander'
 
-import { dirname } from 'dirname-filename-esm'
+// import { dirname } from 'dirname-filename-esm'
+
+import pkg from '../../../package.json'
 
 // 用于读取json文件
-import fse from 'fs-extra'
+// import fse from 'fs-extra'
 
 import gradient from 'gradient-string'
 import semver from 'semver'
 import { log } from '../../utils'
 
-const __dirname = dirname(import.meta)
+// const __dirname = dirname(import.meta)
 
-const pkgPath = path.resolve(process.cwd(), 'package.json')
+// const pkgPath = path.resolve(__dirname, './package.json')
+// console.log('--->', pkgPath)
 
-const pkg = fse.readJsonSync(pkgPath)
+// const pkg = fse.readJsonSync(pkgPath)
 
 const LOWER_NODE_VERSION = '14.0.0'
 
