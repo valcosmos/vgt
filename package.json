@@ -21,7 +21,8 @@
     "start": "tsup --watch",
     "build": "tsup",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "prepare": "simple-git-hooks"
   },
   "dependencies": {
     "@inquirer/input": "^3.0.1",
@@ -49,7 +50,7 @@
     "@types/npmlog": "^7.0.0",
     "@types/semver": "^7.5.8",
     "@typescript-eslint/utils": "^8.8.0",
-    "eslint": "^9.11.1",
+    "eslint": "^9.12.0",
     "lint-staged": "^15.2.10",
     "simple-git-hooks": "^2.11.1",
     "tsup": "^8.3.0",
