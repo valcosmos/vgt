@@ -17,6 +17,9 @@
   ],
   "main": "dist/cli.js",
   "bin": "dist/cli.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "tsup --watch",
     "build": "tsup",
